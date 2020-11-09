@@ -7,6 +7,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,6 +16,9 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class PersonalInfoFragment extends Fragment {
+
+    Button btnNext;
+    EditText edtDob, edtHeight, edtWeight, edtGoalWeight, edtGoalDate;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -59,6 +64,18 @@ public class PersonalInfoFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_personal_info, container, false);
+        View view = inflater.inflate(R.layout.fragment_personal_info, container, false);
+        instantiate(view);
+
+        return view;
+    }
+
+    public void instantiate(View view){
+        btnNext = view.findViewById(R.id.btnNext);
+        edtDob = view.findViewById(R.id.edtBirthDate);
+        edtGoalDate = view.findViewById(R.id.edtGoalDate);
+        edtGoalWeight = view.findViewById(R.id.edtGoalWeight);
+        edtHeight = view.findViewById(R.id.edtHeight);
+        edtWeight = view.findViewById(R.id.edtWeight);
     }
 }

@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,6 +15,8 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class WeightGoalFragment extends Fragment {
+
+    Button btnLose, btnMaintain, btnGain;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -59,6 +62,15 @@ public class WeightGoalFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_weight_goal, container, false);
+        View view =  inflater.inflate(R.layout.fragment_weight_goal, container, false);
+        instantiate(view);
+
+        return view;
+    }
+
+    public void instantiate(View view){
+        btnGain = view.findViewById(R.id.btnGain);
+        btnLose = view.findViewById(R.id.btnLose);
+        btnMaintain = view.findViewById(R.id.btnMaintain);
     }
 }

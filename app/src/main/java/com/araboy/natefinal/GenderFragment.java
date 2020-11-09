@@ -1,5 +1,6 @@
 package com.araboy.natefinal;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,6 +16,8 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class GenderFragment extends Fragment {
+
+    Button btnMale, btnFemale;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -59,6 +63,30 @@ public class GenderFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_gender, container, false);
+        View view = inflater.inflate(R.layout.fragment_gender, container, false);
+        instantiate(view);
+
+        btnMale.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Todo: Add code that stores their gender
+                startActivity(new Intent(getActivity(), WeightGoalFragment.class));
+            }
+        });
+
+        btnFemale.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Todo: Add code that stores their gender
+                startActivity(new Intent(getActivity(), WeightGoalFragment.class));
+            }
+        });
+
+        return view;
+    }
+
+    public void instantiate(View view){
+        btnFemale = view.findViewById(R.id.btnFemale);
+        btnMale = view.findViewById(R.id.btnMale);
     }
 }

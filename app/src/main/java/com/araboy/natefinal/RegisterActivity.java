@@ -31,6 +31,13 @@ public class RegisterActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), com.araboy.natefinal.LoginActivity.class));
             }
         });
+
+        mRegisterBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), com.araboy.natefinal.HomeActivity.class));
+            }
+        });
     }
 
     public void instantiate(){

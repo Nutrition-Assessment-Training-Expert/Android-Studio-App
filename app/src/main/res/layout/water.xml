@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainLayoutGoal"
+    android:layout_height="wrap_content"
+    >
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/rounded_corned_card"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+
+            <ImageView
+                android:id="@+id/imgWater"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/water_drop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@mipmap/water_drop" />
+
+            <TextView
+                android:id="@+id/txtGoalDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="1dp"
+                android:text="Goal:"
+                android:textColor="#4E4E4E"
+                app:layout_constraintStart_toEndOf="@+id/imgWater"
+                app:layout_constraintTop_toTopOf="@+id/imgWater" />
+
+            <TextView
+                android:id="@+id/txtRemainingDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Remaining:"
+                android:textColor="#4E4E4E"
+                app:layout_constraintBottom_toBottomOf="@+id/imgWater"
+                app:layout_constraintStart_toEndOf="@+id/imgWater" />
+
+            <TextView
+                android:id="@+id/txtConsumedDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Consumed:"
+                android:textColor="#4E4E4E"
+                app:layout_constraintBottom_toTopOf="@+id/txtRemainingDesc"
+                app:layout_constraintStart_toEndOf="@+id/imgWater"
+                app:layout_constraintTop_toBottomOf="@+id/txtGoalDesc" />
+
+            <TextView
+                android:id="@+id/txtGoalVal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="26dp"
+                android:text="82oz"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/txtConsumedDesc"
+                app:layout_constraintTop_toTopOf="@+id/txtGoalDesc" />
+
+            <TextView
+                android:id="@+id/txtConsumedVal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="26dp"
+                android:text="62oz"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/txtConsumedDesc"
+                app:layout_constraintTop_toTopOf="@+id/txtConsumedDesc" />
+
+            <TextView
+                android:id="@+id/txtRemainingVal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="26dp"
+                android:text="20oz"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/txtConsumedDesc"
+                app:layout_constraintTop_toTopOf="@+id/txtRemainingDesc" />
+
+            <EditText
+                android:id="@+id/editTextTextPersonName"
+                android:layout_width="53dp"
+                android:layout_height="39dp"
+                android:ems="10"
+                android:hint="50"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/txtGoalVal"
+                app:layout_constraintTop_toTopOf="@+id/txtGoalVal" />
+
+            <Button
+                android:id="@+id/btnAddWater"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/colorPrimary"
+                android:text="Add"
+                android:textColor="#FFFFFF"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/txtConsumedVal"
+                app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

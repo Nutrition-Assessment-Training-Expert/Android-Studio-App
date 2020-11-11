@@ -1,0 +1,708 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/waterCardView"
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/rounded_corned_card"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtWater">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp">
+
+
+                    <ImageView
+                        android:id="@+id/imgWater"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/water_drop"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@mipmap/water_drop" />
+
+                    <TextView
+                        android:id="@+id/txtGoalDesc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="1dp"
+                        android:text="Goal:"
+                        android:textColor="#4E4E4E"
+                        app:layout_constraintStart_toEndOf="@+id/imgWater"
+                        app:layout_constraintTop_toTopOf="@+id/imgWater" />
+
+                    <TextView
+                        android:id="@+id/txtRemainingDesc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="Remaining:"
+                        android:textColor="#4E4E4E"
+                        app:layout_constraintBottom_toBottomOf="@+id/imgWater"
+                        app:layout_constraintStart_toEndOf="@+id/imgWater" />
+
+                    <TextView
+                        android:id="@+id/txtConsumedDesc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="Consumed:"
+                        android:textColor="#4E4E4E"
+                        app:layout_constraintBottom_toTopOf="@+id/txtRemainingDesc"
+                        app:layout_constraintStart_toEndOf="@+id/imgWater"
+                        app:layout_constraintTop_toBottomOf="@+id/txtGoalDesc" />
+
+                    <TextView
+                        android:id="@+id/txtGoalVal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="26dp"
+                        android:text="82oz"
+                        android:textColor="#000000"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toEndOf="@+id/txtConsumedDesc"
+                        app:layout_constraintTop_toTopOf="@+id/txtGoalDesc" />
+
+                    <TextView
+                        android:id="@+id/txtConsumedVal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="26dp"
+                        android:text="62oz"
+                        android:textColor="#000000"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toEndOf="@+id/txtConsumedDesc"
+                        app:layout_constraintTop_toTopOf="@+id/txtConsumedDesc" />
+
+                    <TextView
+                        android:id="@+id/txtRemainingVal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="26dp"
+                        android:text="20oz"
+                        android:textColor="#000000"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toEndOf="@+id/txtConsumedDesc"
+                        app:layout_constraintTop_toTopOf="@+id/txtRemainingDesc" />
+
+                    <EditText
+                        android:id="@+id/editTextTextPersonName"
+                        android:layout_width="53dp"
+                        android:layout_height="39dp"
+                        android:ems="10"
+                        android:hint="50"
+                        android:inputType="textPersonName"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/txtGoalVal"
+                        app:layout_constraintTop_toTopOf="@+id/txtGoalVal" />
+
+                    <Button
+                        android:id="@+id/btnAddWater"
+                        android:layout_width="50dp"
+                        android:layout_height="35dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/rounded_corned_card_dark"
+                        android:text="Add"
+                        android:textColor="#FFFFFF"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/txtConsumedVal"
+                        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/txtWater"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="Water"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txtMeals"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="Meals"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/waterCardView" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_corned_card"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtMeals">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp">
+
+
+                    <TextView
+                        android:id="@+id/txtMealTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Breakfast"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/txtFatDesc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Fats:"
+                        android:textColor="#515151"
+                        android:textSize="15sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txtCarbs" />
+
+                    <TextView
+                        android:id="@+id/txtCarbs"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Carbs:"
+                        android:textColor="#515151"
+                        android:textSize="15sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txtProteinDesc" />
+
+                    <TextView
+                        android:id="@+id/txtCalories"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Calories:"
+                        android:textColor="#515151"
+                        android:textSize="15sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txtMealTime" />
+
+                    <TextView
+                        android:id="@+id/txtProteinDesc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Protein:"
+                        android:textColor="#515151"
+                        android:textSize="15sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txtCalories" />
+
+                    <TextView
+                        android:id="@+id/txtCaloriesVal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:fontFamily="sans-serif-black"
+                        android:text="220 Cals"
+                        android:textColor="#000000"
+                        android:textSize="15sp"
+                        app:layout_constraintStart_toEndOf="@+id/txtCalories"
+                        app:layout_constraintTop_toTopOf="@+id/txtCalories" />
+
+                    <TextView
+                        android:id="@+id/txtFatsVal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-black"
+                        android:text="10 g"
+                        android:textColor="#000000"
+                        android:textSize="15sp"
+                        app:layout_constraintEnd_toEndOf="@+id/txtCaloriesVal"
+                        app:layout_constraintTop_toTopOf="@+id/txtFatDesc" />
+
+                    <TextView
+                        android:id="@+id/txtCarbsVal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-black"
+                        android:text="10 g"
+                        android:textColor="#000000"
+                        android:textSize="15sp"
+                        app:layout_constraintEnd_toEndOf="@+id/txtCaloriesVal"
+                        app:layout_constraintTop_toTopOf="@+id/txtCarbs" />
+
+                    <TextView
+                        android:id="@+id/txtProteinVal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-black"
+                        android:text="10 g"
+                        android:textColor="#000000"
+                        android:textSize="15sp"
+                        app:layout_constraintEnd_toEndOf="@+id/txtCaloriesVal"
+                        app:layout_constraintTop_toTopOf="@+id/txtProteinDesc" />
+
+                    <Button
+                        android:id="@+id/btnAdd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/rounded_corned_card_dark"
+                        android:text="Add"
+                        android:textColor="#FFFFFF"
+                        app:layout_constraintEnd_toEndOf="@+id/txtFatsVal"
+                        app:layout_constraintStart_toStartOf="@+id/txtFatDesc"
+                        app:layout_constraintTop_toBottomOf="@+id/txtFatDesc" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/rounded_corned_card"
+                app:layout_constraintEnd_toEndOf="@+id/cardView2"
+                app:layout_constraintStart_toStartOf="@+id/cardView2"
+                app:layout_constraintTop_toBottomOf="@+id/cardView2">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dp">
+
+
+                    <TextView
+                        android:id="@+id/txtMealTime2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Lunch"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/txtFatDesc2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Fats:"
+                        android:textColor="#515151"
+                        android:textSize="15sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txtCarbs2" />
+
+                    <TextView
+                        android:id="@+id/txtCarbs2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Carbs:"
+                        android:textColor="#515151"
+                        android:textSize="15sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txtProteinDesc2" />
+
+                    <TextView
+                        android:id="@+id/txtCalories2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Calories:"
+                        android:textColor="#515151"
+                        android:textSize="15sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txtMealTime2" />
+
+                    <TextView
+                        android:id="@+id/txtProteinDesc2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Protein:"
+                        android:textColor="#515151"
+                        android:textSize="15sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txtCalories2" />
+
+                    <TextView
+                        android:id="@+id/txtCaloriesVal2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:fontFamily="sans-serif-black"
+                        android:text="220 Cals"
+                        android:textColor="#000000"
+                        android:textSize="15sp"
+                        app:layout_constraintStart_toEndOf="@+id/txtCalories2"
+                        app:layout_constraintTop_toTopOf="@+id/txtCalories2" />
+
+                    <TextView
+                        android:id="@+id/txtFatsVal2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-black"
+                        android:text="10 g"
+                        android:textColor="#000000"
+                        android:textSize="15sp"
+                        app:layout_constraintEnd_toEndOf="@+id/txtCaloriesVal2"
+                        app:layout_constraintTop_toTopOf="@+id/txtFatDesc2" />
+
+                    <TextView
+                        android:id="@+id/txtCarbsVal2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-black"
+                        android:text="10 g"
+                        android:textColor="#000000"
+                        android:textSize="15sp"
+                        app:layout_constraintEnd_toEndOf="@+id/txtCaloriesVal2"
+                        app:layout_constraintTop_toTopOf="@+id/txtCarbs2" />
+
+                    <TextView
+                        android:id="@+id/txtProteinVal2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-black"
+                        android:text="10 g"
+                        android:textColor="#000000"
+                        android:textSize="15sp"
+                        app:layout_constraintEnd_toEndOf="@+id/txtCaloriesVal2"
+                        app:layout_constraintTop_toTopOf="@+id/txtProteinDesc2" />
+
+                    <Button
+                        android:id="@+id/btnAdd2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/rounded_corned_card_dark"
+                        android:text="Add"
+                        android:textColor="#FFFFFF"
+                        app:layout_constraintEnd_toEndOf="@+id/txtFatsVal2"
+                        app:layout_constraintStart_toStartOf="@+id/txtFatDesc2"
+                        app:layout_constraintTop_toBottomOf="@+id/txtFatDesc2" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/rounded_corned_card"
+                app:layout_constraintEnd_toEndOf="@+id/cardView3"
+                app:layout_constraintStart_toStartOf="@+id/cardView3"
+                app:layout_constraintTop_toBottomOf="@+id/cardView3">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dp">
+
+
+                    <TextView
+                        android:id="@+id/txtMealTime3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Dinner"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/txtFatDesc3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Fats:"
+                        android:textColor="#515151"
+                        android:textSize="15sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txtCarbs3" />
+
+                    <TextView
+                        android:id="@+id/txtCarbs3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Carbs:"
+                        android:textColor="#515151"
+                        android:textSize="15sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txtProteinDesc3" />
+
+                    <TextView
+                        android:id="@+id/txtCalories3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Calories:"
+                        android:textColor="#515151"
+                        android:textSize="15sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txtMealTime3" />
+
+                    <TextView
+                        android:id="@+id/txtProteinDesc3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Protein:"
+                        android:textColor="#515151"
+                        android:textSize="15sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txtCalories3" />
+
+                    <TextView
+                        android:id="@+id/txtCaloriesVal3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:fontFamily="sans-serif-black"
+                        android:text="220 Cals"
+                        android:textColor="#000000"
+                        android:textSize="15sp"
+                        app:layout_constraintStart_toEndOf="@+id/txtCalories3"
+                        app:layout_constraintTop_toTopOf="@+id/txtCalories3" />
+
+                    <TextView
+                        android:id="@+id/txtFatsVal3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-black"
+                        android:text="10 g"
+                        android:textColor="#000000"
+                        android:textSize="15sp"
+                        app:layout_constraintEnd_toEndOf="@+id/txtCaloriesVal3"
+                        app:layout_constraintTop_toTopOf="@+id/txtFatDesc3" />
+
+                    <TextView
+                        android:id="@+id/txtCarbsVal3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-black"
+                        android:text="10 g"
+                        android:textColor="#000000"
+                        android:textSize="15sp"
+                        app:layout_constraintEnd_toEndOf="@+id/txtCaloriesVal3"
+                        app:layout_constraintTop_toTopOf="@+id/txtCarbs3" />
+
+                    <TextView
+                        android:id="@+id/txtProteinVal3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-black"
+                        android:text="10 g"
+                        android:textColor="#000000"
+                        android:textSize="15sp"
+                        app:layout_constraintEnd_toEndOf="@+id/txtCaloriesVal3"
+                        app:layout_constraintTop_toTopOf="@+id/txtProteinDesc3" />
+
+                    <Button
+                        android:id="@+id/btnAdd3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/rounded_corned_card_dark"
+                        android:text="Add"
+                        android:textColor="#FFFFFF"
+                        app:layout_constraintEnd_toEndOf="@+id/txtFatsVal3"
+                        app:layout_constraintStart_toStartOf="@+id/txtFatDesc3"
+                        app:layout_constraintTop_toBottomOf="@+id/txtFatDesc3" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/rounded_corned_card"
+                app:layout_constraintEnd_toEndOf="@+id/cardView4"
+                app:layout_constraintStart_toStartOf="@+id/cardView4"
+                app:layout_constraintTop_toBottomOf="@+id/cardView4">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dp">
+
+
+                    <TextView
+                        android:id="@+id/txtMealTime4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Snacks"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/txtFatDesc4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Fats:"
+                        android:textColor="#515151"
+                        android:textSize="15sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txtCarbs4" />
+
+                    <TextView
+                        android:id="@+id/txtCarbs4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Carbs:"
+                        android:textColor="#515151"
+                        android:textSize="15sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txtProteinDesc4" />
+
+                    <TextView
+                        android:id="@+id/txtCalories4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Calories:"
+                        android:textColor="#515151"
+                        android:textSize="15sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txtMealTime4" />
+
+                    <TextView
+                        android:id="@+id/txtProteinDesc4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Protein:"
+                        android:textColor="#515151"
+                        android:textSize="15sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txtCalories4" />
+
+                    <TextView
+                        android:id="@+id/txtCaloriesVal4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:fontFamily="sans-serif-black"
+                        android:text="220 Cals"
+                        android:textColor="#000000"
+                        android:textSize="15sp"
+                        app:layout_constraintStart_toEndOf="@+id/txtCalories4"
+                        app:layout_constraintTop_toTopOf="@+id/txtCalories4" />
+
+                    <TextView
+                        android:id="@+id/txtFatsVal4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-black"
+                        android:text="10 g"
+                        android:textColor="#000000"
+                        android:textSize="15sp"
+                        app:layout_constraintEnd_toEndOf="@+id/txtCaloriesVal4"
+                        app:layout_constraintTop_toTopOf="@+id/txtFatDesc4" />
+
+                    <TextView
+                        android:id="@+id/txtCarbsVal4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-black"
+                        android:text="10 g"
+                        android:textColor="#000000"
+                        android:textSize="15sp"
+                        app:layout_constraintEnd_toEndOf="@+id/txtCaloriesVal4"
+                        app:layout_constraintTop_toTopOf="@+id/txtCarbs4" />
+
+                    <TextView
+                        android:id="@+id/txtProteinVal4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-black"
+                        android:text="10 g"
+                        android:textColor="#000000"
+                        android:textSize="15sp"
+                        app:layout_constraintEnd_toEndOf="@+id/txtCaloriesVal4"
+                        app:layout_constraintTop_toTopOf="@+id/txtProteinDesc4" />
+
+                    <Button
+                        android:id="@+id/btnAdd4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/rounded_corned_card_dark"
+                        android:text="Add"
+                        android:textColor="#FFFFFF"
+                        app:layout_constraintEnd_toEndOf="@+id/txtFatsVal4"
+                        app:layout_constraintStart_toStartOf="@+id/txtFatDesc4"
+                        app:layout_constraintTop_toBottomOf="@+id/txtFatDesc4" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

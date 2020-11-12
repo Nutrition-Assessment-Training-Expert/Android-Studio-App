@@ -6,11 +6,6 @@
     app:startDestination="@id/homeFragment">
 
     <fragment
-        android:id="@+id/activeLevelFragment"
-        android:name="com.araboy.natefinal.activeLevelFragment"
-        android:label="fragment_active_level"
-        tools:layout="@layout/fragment_active_level" />
-    <fragment
         android:id="@+id/profileFragment"
         android:name="com.araboy.natefinal.ProfileFragment"
         android:label="fragment_profile"
@@ -20,4 +15,9 @@
         android:name="com.araboy.natefinal.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/accountFragment"
+        android:name="com.araboy.natefinal.AccountFragment"
+        android:label="fragment_account"
+        tools:layout="@layout/fragment_account" />
 </navigation>

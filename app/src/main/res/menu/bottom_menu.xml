@@ -9,7 +9,7 @@
     <item
         android:title="Analytics"
         android:icon="@drawable/ic_goals"
-        android:id="@+id/weightGoalFragment"/>
+        android:id="@+id/accountFragment"/>
 
     <item
         android:title="Profile"

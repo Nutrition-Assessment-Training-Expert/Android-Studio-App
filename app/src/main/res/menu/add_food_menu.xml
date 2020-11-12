@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:title="Custom"
+        android:icon="@drawable/ic_profile"
+        android:id="@+id/customFoodFragment"/>
+
+    <item
+        android:title="Mic"
+        android:icon="@drawable/ic_mic"
+        android:id="@+id/micFragment"/>
+
+    <item
+        android:id="@+id/addRecentFoodFragment"
+        android:icon="@drawable/ic_add_food"
+        android:title="Recent"/>
+
+    <item
+        android:title="Photo"
+        android:icon="@drawable/ic_camera"
+        android:id="@+id/genderFragment"/>
+
+    <item
+        android:id="@+id/accountFragment2"
+        android:icon="@drawable/ic_temp_barcode"
+        android:title="Barcode"/>
+</menu>
